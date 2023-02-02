@@ -504,6 +504,7 @@ class MMapIndexedDataset(torch.utils.data.Dataset):
         self._index = self.Index(index_file_path(self._path))
 
         _warmup_mmap_file(data_file_path(self._path))
+        print(data_file_path(self._path))
         self._bin_buffer_mmap = np.memmap(
             data_file_path(self._path), mode="r", order="C"
         )
